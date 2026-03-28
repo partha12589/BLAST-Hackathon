@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taint & Risk Scoring Command Center</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- Left Sidebar -->
+        <aside class="sidebar glass-panel">
+            <div class="logo-container">
+                <div class="logo-icon"></div>
+                <h2>B.L.A.S.T.</h2>
+            </div>
+            <nav class="nav-menu">
+                <a href="#" class="nav-item active"><span class="icon">⬡</span> Live Mempool</a>
+                <a href="#" class="nav-item"><span class="icon">🔍</span> Entity Search</a>
+                <a href="#" class="nav-item"><span class="icon">⚠️</span> Alerts</a>
+            </nav>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <!-- Top Cards -->
+            <header class="top-metrics">
+                <div class="metric-card glass-panel">
+                    <span class="metric-title">Overall Risk Score</span>
+                    <h3 class="metric-value text-gradient" id="risk-score">--</h3>
+                    <div class="metric-trend" id="risk-trend">Waiting for input...</div>
+                </div>
+                <div class="metric-card glass-panel">
+                    <span class="metric-title">Tainted Volume</span>
+                    <h3 class="metric-value" id="taint-volume">$--</h3>
+                </div>
+                <div class="metric-card glass-panel">
+                    <span class="metric-title">Network Hops</span>
+                    <h3 class="metric-value" id="network-hops">--</h3>
+                </div>
+            </header>
+
+            <!-- Hero Section: Node Graph -->
+            <section class="hero-graph glass-panel">
+                <div class="graph-header">
+                    <h3>Provenance Graph Visualizer</h3>
+                </div>
+                <div class="graph-canvas" id="node-graph-container">
+                    <!-- Graph will be injected here via JS (e.g. D3.js or manual nodes) -->
+                    <div class="graph-placeholder">
+                        <div class="pulse-ring"></div>
+                        <p>Awaiting Graph Payload</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Bottom Section: Command Center -->
+            <section class="command-center glass-panel">
+                <div class="target-info">
+                    <span class="label">Target Wallet / Entity</span>
+                    <h4 class="wallet-address font-mono">0x...</h4>
+                </div>
+                
+                <div class="status-indicator">
+                    <div class="status-badge" id="status-badge">AWAITING</div>
+                </div>
+                
+                <div class="action-panel">
+                    <button class="btn-freeze disabled" id="freeze-btn">
+                        <span class="icon">🔒</span> Freeze Funds
+                    </button>
+                </div>
+            </section>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

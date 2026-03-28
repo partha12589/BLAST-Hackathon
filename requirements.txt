@@ -1,0 +1,8 @@
+# required packages
+python-dotenv
+databricks-sql-connector
+databricks-sdk
+websockets
+fastapi
+uvicorn
+web3
